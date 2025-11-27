@@ -1,19 +1,18 @@
-
 import React from 'react';
 import { DownloadIcon } from './Icons';
 
 const DownloadSection: React.FC = () => {
-    const handleDownload = (e: React.MouseEvent) => {
-        e.preventDefault();
+    const triggerLocker = () => {
         if (typeof window !== 'undefined' && (window as any)._kt) {
             (window as any)._kt();
         }
-        window.location.href = 'YOUR_FINAL_DOWNLOAD_URL_HERE';
     };
 
     return (
         <div id="download-section" className="mb-12 pt-8 border-t border-white/5">
-            <h2 className="text-2xl font-bold text-white mb-6 text-center">Available Downloads</h2>
+            <h2 className="text-2xl font-bold text-white mb-6 text-center">
+                Available Downloads
+            </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
                 {/* MOD Card */}
@@ -42,7 +41,7 @@ const DownloadSection: React.FC = () => {
                                 <span>Size: 902 MB</span>
                             </div>
                             <button 
-                                onClick={handleDownload}
+                                onClick={triggerLocker}
                                 className="w-full bg-green-500 hover:bg-green-400 text-black font-bold py-3 rounded-xl flex items-center justify-center gap-2 transition-all"
                             >
                                 <DownloadIcon className="w-5 h-5" />
@@ -72,7 +71,7 @@ const DownloadSection: React.FC = () => {
                                 <span>Size: 902 MB</span>
                             </div>
                             <button 
-                                onClick={handleDownload}
+                                onClick={triggerLocker}
                                 className="w-full bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 transition-all"
                             >
                                 <DownloadIcon className="w-5 h-5" />

@@ -1,14 +1,11 @@
-
 import React from 'react';
 import { StarIcon, CheckBadgeIcon, AndroidIcon, SafetyIcon, InfoIcon } from './Icons';
 
 const Hero: React.FC = () => {
-    const handleDownload = (e: React.MouseEvent) => {
-        e.preventDefault();
+    const triggerLocker = () => {
         if (typeof window !== 'undefined' && (window as any)._kt) {
             (window as any)._kt();
         }
-        window.location.href = 'YOUR_FINAL_DOWNLOAD_URL_HERE';
     };
 
     return (
@@ -62,7 +59,7 @@ const Hero: React.FC = () => {
             {/* Action Bar */}
             <div className="mt-8 flex flex-col sm:flex-row items-center gap-4 border-t border-white/5 pt-6">
                 <button 
-                    onClick={handleDownload}
+                    onClick={triggerLocker}
                     className="w-full sm:w-auto flex-grow bg-green-500 hover:bg-green-400 text-black font-bold text-lg py-3.5 px-8 rounded-xl shadow-[0_0_20px_rgba(34,197,94,0.4)] transition-all hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2"
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
@@ -72,8 +69,7 @@ const Hero: React.FC = () => {
                 </button>
                 
                 <div 
-                    onClick={handleDownload}
-                    className="cursor-pointer flex items-center gap-2 text-green-400 text-xs font-semibold bg-green-500/5 px-4 py-2 rounded-lg border border-green-500/10 hover:bg-green-500/10 transition-colors"
+                    className="flex items-center gap-2 text-green-400 text-xs font-semibold bg-green-500/5 px-4 py-2 rounded-lg border border-green-500/10 transition-colors"
                 >
                     <SafetyIcon className="w-4 h-4" />
                     Safe to Download
