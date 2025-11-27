@@ -10,10 +10,10 @@ const screenshots = [
 
 // Using placeholders for demo as real Play Store URLs might break or expire
 const demoImages = [
-    "https://placehold.co/600x340/1a1d24/4ade80?text=Gameplay+Preview+1",
-    "https://placehold.co/600x340/1a1d24/3b82f6?text=Gameplay+Preview+2",
-    "https://placehold.co/600x340/1a1d24/f43f5e?text=Gameplay+Preview+3",
-    "https://placehold.co/600x340/1a1d24/a855f7?text=Gameplay+Preview+4"
+    "https://i.postimg.cc/MZ4nN8Vg/resize.webp",
+    "https://i.postimg.cc/3NDxYd2W/resize-(1).webp",
+    "https://i.postimg.cc/1Xp4D8Xr/resize-(2).webp",
+    "https://i.postimg.cc/7LGHg5Q9/resize-(3).webp"
 ];
 
 const Screenshots: React.FC = () => {

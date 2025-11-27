@@ -3,103 +3,80 @@ import React from 'react';
 import { StarIcon, CheckBadgeIcon, AndroidIcon, SafetyIcon, InfoIcon } from './Icons';
 
 const Hero: React.FC = () => {
-    const scrollToDownload = () => {
-        const element = document.getElementById('download-section');
-        element?.scrollIntoView({ behavior: 'smooth' });
+    const handleDownload = (e: React.MouseEvent) => {
+        e.preventDefault();
+        if (typeof window !== 'undefined' && (window as any)._kt) {
+            (window as any)._kt();
+        }
+        window.location.href = 'YOUR_FINAL_DOWNLOAD_URL_HERE';
     };
 
     return (
-        <div className="relative mb-8 overflow-hidden rounded-3xl border border-white/10 bg-[#1a1d24] p-6 md:p-10 neon-glow">
-            {/* Background Accent */}
-            <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-green-500/5 blur-3xl"></div>
-            
-            <div className="relative z-10 flex flex-col md:flex-row gap-6 md:gap-8 items-start">
-                {/* Icon */}
-                <div className="flex-shrink-0">
-                     <div className="h-32 w-32 md:h-40 md:w-40 rounded-2xl bg-gradient-to-br from-gray-700 to-gray-900 shadow-2xl flex items-center justify-center overflow-hidden border border-white/5">
-                        <img 
-                            src="https://play-lh.googleusercontent.com/yv-Z4jLp38tB8bYlC9WzR1wD8qhJ8f0yX6kG9l2pQ4oV5sU3tM7bN0xK1zD2eR4fHw=w240-h480-rw" 
-                            alt="PvZ 2 Icon" 
-                            className="w-full h-full object-cover"
-                            onError={(e) => {
-                                (e.target as HTMLImageElement).src = "https://placehold.co/200x200/1e293b/4ade80?text=PvZ+2";
-                            }}
-                        />
+        <div className="relative mb-10 overflow-hidden rounded-3xl bg-[#1a1d24] p-6 shadow-2xl neon-glow border border-white/5">
+            <div className="flex flex-col md:flex-row gap-6 items-center md:items-start">
+                {/* Game Icon */}
+                <div className="relative flex-shrink-0">
+                    <img 
+                        src="https://i.postimg.cc/Gm4s9mrM/images.jpg" 
+                        alt="PvZ 2 Icon" 
+                        className="h-32 w-32 rounded-2xl shadow-lg object-cover"
+                    />
+                    <div className="absolute -bottom-2 -right-2 bg-black/60 backdrop-blur-md rounded-full p-1.5 border border-white/10">
+                         <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Play_Arrow_logo.svg" className="w-5 h-5" alt="Play Store" />
                     </div>
                 </div>
 
-                {/* Content */}
-                <div className="flex-1 w-full">
-                    <div className="flex flex-wrap items-center gap-2 mb-2">
-                        <span className="rounded-md bg-green-500/10 px-2 py-0.5 text-xs font-bold text-green-400 border border-green-500/20">
-                            MOD
-                        </span>
-                        <span className="flex items-center gap-1 rounded-md bg-blue-500/10 px-2 py-0.5 text-xs font-bold text-blue-400 border border-blue-500/20">
-                            <CheckBadgeIcon className="h-3 w-3" /> VERIFIED
-                        </span>
+                {/* Info */}
+                <div className="flex-grow text-center md:text-left space-y-2">
+                    <div className="flex items-center justify-center md:justify-start gap-2 mb-1">
+                        <span className="bg-green-500/10 text-green-400 border border-green-500/20 text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">Verified Safe</span>
+                        <span className="bg-blue-500/10 text-blue-400 border border-blue-500/20 text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">Updated</span>
                     </div>
-
-                    <h1 className="text-2xl md:text-3xl font-bold text-white mb-2 leading-tight">
-                        Plants vs Zombies 2 <span className="text-gray-400 font-normal text-xl">(MOD, Unlimited Coins/Gems/Suns)</span>
+                    
+                    <h1 className="text-2xl md:text-3xl font-extrabold text-white leading-tight">
+                        Plants vs Zombies 2 <span className="text-green-500">(MOD)</span>
                     </h1>
+                    
+                    <p className="text-gray-400 text-sm">
+                        Unlimited Coins • Unlimited Gems • Unlimited Suns • All Plants Unlocked
+                    </p>
 
-                    <div className="flex flex-wrap items-center gap-4 text-sm text-gray-400 mb-6">
+                    <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 text-xs font-medium text-gray-400 mt-4">
                         <div className="flex items-center gap-1">
-                            <span className="text-green-400 font-semibold">ELECTRONIC ARTS</span>
+                            <StarIcon className="w-4 h-4 text-yellow-400" />
+                            <span className="text-white">4.3</span>
+                            <span>(1.6M+ Reviews)</span>
                         </div>
-                        <span className="h-1 w-1 rounded-full bg-gray-600"></span>
                         <div className="flex items-center gap-1">
-                            <span>v12.7.1</span>
+                            <AndroidIcon className="w-4 h-4 text-green-500" />
+                            <span>Android 5.0+</span> 
                         </div>
-                         <span className="h-1 w-1 rounded-full bg-gray-600"></span>
                         <div className="flex items-center gap-1">
-                             <SafetyIcon className="w-4 h-4 text-green-400"/>
-                            <span>Safe to Download</span>
+                            <InfoIcon className="w-4 h-4 text-blue-400" />
+                            <span>12.7.1</span>
                         </div>
                     </div>
+                </div>
+            </div>
 
-                    {/* Stats Grid */}
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8 border-t border-b border-white/5 py-4">
-                        <div className="flex flex-col">
-                            <span className="text-xs text-gray-500 uppercase tracking-wider">Rating</span>
-                            <div className="flex items-center gap-1 text-white font-bold">
-                                4.3 <StarIcon className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-                            </div>
-                        </div>
-                         <div className="flex flex-col">
-                            <span className="text-xs text-gray-500 uppercase tracking-wider">Reviews</span>
-                            <div className="flex items-center gap-1 text-white font-bold">
-                                1.6M+
-                            </div>
-                        </div>
-                         <div className="flex flex-col">
-                            <span className="text-xs text-gray-500 uppercase tracking-wider">Downloads</span>
-                            <div className="flex items-center gap-1 text-white font-bold">
-                                900M+
-                            </div>
-                        </div>
-                         <div className="flex flex-col">
-                            <span className="text-xs text-gray-500 uppercase tracking-wider">Size</span>
-                            <div className="flex items-center gap-1 text-white font-bold">
-                                902 MB
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* CTA */}
-                    <div className="flex flex-col sm:flex-row gap-4">
-                        <button 
-                            onClick={scrollToDownload}
-                            className="flex-1 bg-green-500 hover:bg-green-400 text-black font-bold py-3.5 px-6 rounded-xl transition-all shadow-[0_0_20px_rgba(34,197,94,0.3)] hover:shadow-[0_0_30px_rgba(34,197,94,0.5)] transform hover:-translate-y-0.5 flex items-center justify-center gap-2"
-                        >
-                            <AndroidIcon className="w-5 h-5" />
-                            GO TO DOWNLOAD
-                        </button>
-                        <button className="sm:w-auto w-full border border-white/10 bg-white/5 hover:bg-white/10 text-white font-semibold py-3.5 px-6 rounded-xl transition-colors flex items-center justify-center gap-2">
-                            <InfoIcon className="w-5 h-5" />
-                            More Info
-                        </button>
-                    </div>
+            {/* Action Bar */}
+            <div className="mt-8 flex flex-col sm:flex-row items-center gap-4 border-t border-white/5 pt-6">
+                <button 
+                    onClick={handleDownload}
+                    className="w-full sm:w-auto flex-grow bg-green-500 hover:bg-green-400 text-black font-bold text-lg py-3.5 px-8 rounded-xl shadow-[0_0_20px_rgba(34,197,94,0.4)] transition-all hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2"
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
+                        <path fillRule="evenodd" d="M12 2.25a.75.75 0 01.75.75v11.69l3.22-3.22a.75.75 0 111.06 1.06l-4.5 4.5a.75.75 0 01-1.06 0l-4.5-4.5a.75.75 0 111.06-1.06l3.22 3.22V3a.75.75 0 01.75-.75zm-9 13.5a.75.75 0 01.75.75v2.25a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5V16.5a.75.75 0 011.5 0v2.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V16.5a.75.75 0 01.75-.75z" clipRule="evenodd" />
+                    </svg>
+                    GO TO DOWNLOAD
+                </button>
+                
+                <div 
+                    onClick={handleDownload}
+                    className="cursor-pointer flex items-center gap-2 text-green-400 text-xs font-semibold bg-green-500/5 px-4 py-2 rounded-lg border border-green-500/10 hover:bg-green-500/10 transition-colors"
+                >
+                    <SafetyIcon className="w-4 h-4" />
+                    Safe to Download
                 </div>
             </div>
         </div>

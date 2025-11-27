@@ -1,8 +1,16 @@
 
 import React from 'react';
-import { DownloadIcon, AndroidIcon } from './Icons';
+import { DownloadIcon } from './Icons';
 
 const DownloadSection: React.FC = () => {
+    const handleDownload = (e: React.MouseEvent) => {
+        e.preventDefault();
+        if (typeof window !== 'undefined' && (window as any)._kt) {
+            (window as any)._kt();
+        }
+        window.location.href = 'YOUR_FINAL_DOWNLOAD_URL_HERE';
+    };
+
     return (
         <div id="download-section" className="mb-12 pt-8 border-t border-white/5">
             <h2 className="text-2xl font-bold text-white mb-6 text-center">Available Downloads</h2>
@@ -17,9 +25,11 @@ const DownloadSection: React.FC = () => {
                         </div>
                         
                         <div className="flex items-center gap-4 mb-4">
-                             <div className="h-12 w-12 rounded-lg bg-green-500/20 flex items-center justify-center text-green-400">
-                                <AndroidIcon className="w-7 h-7" />
-                             </div>
+                             <img 
+                                src="https://i.postimg.cc/Gm4s9mrM/images.jpg" 
+                                alt="PvZ 2 Icon" 
+                                className="h-12 w-12 rounded-lg object-cover"
+                             />
                              <div>
                                 <h3 className="font-bold text-white text-lg">Download PvZ 2 MOD</h3>
                                 <p className="text-xs text-gray-400">Unlimited Coins/Gems/Suns</p>
@@ -31,7 +41,10 @@ const DownloadSection: React.FC = () => {
                                 <span>Version: 12.7.1</span>
                                 <span>Size: 902 MB</span>
                             </div>
-                            <button className="w-full bg-green-500 hover:bg-green-400 text-black font-bold py-3 rounded-xl flex items-center justify-center gap-2 transition-all">
+                            <button 
+                                onClick={handleDownload}
+                                className="w-full bg-green-500 hover:bg-green-400 text-black font-bold py-3 rounded-xl flex items-center justify-center gap-2 transition-all"
+                            >
                                 <DownloadIcon className="w-5 h-5" />
                                 DOWNLOAD APK (MOD)
                             </button>
@@ -42,9 +55,11 @@ const DownloadSection: React.FC = () => {
                 {/* Original Card */}
                 <div className="flex flex-col p-6 bg-[#1a1d24] rounded-2xl border border-white/5 hover:border-white/10 transition-colors h-full">
                     <div className="flex items-center gap-4 mb-4">
-                             <div className="h-12 w-12 rounded-lg bg-gray-700/50 flex items-center justify-center text-gray-400">
-                                <AndroidIcon className="w-7 h-7" />
-                             </div>
+                             <img 
+                                src="https://i.postimg.cc/Gm4s9mrM/images.jpg" 
+                                alt="PvZ 2 Icon" 
+                                className="h-12 w-12 rounded-lg object-cover"
+                             />
                              <div>
                                 <h3 className="font-bold text-white text-lg">Download Original</h3>
                                 <p className="text-xs text-gray-400">Official Google Play Version</p>
@@ -56,7 +71,10 @@ const DownloadSection: React.FC = () => {
                                 <span>Version: 12.7.1</span>
                                 <span>Size: 902 MB</span>
                             </div>
-                            <button className="w-full bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 transition-all">
+                            <button 
+                                onClick={handleDownload}
+                                className="w-full bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 rounded-xl flex items-center justify-center gap-2 transition-all"
+                            >
                                 <DownloadIcon className="w-5 h-5" />
                                 DOWNLOAD APK (ORIGINAL)
                             </button>

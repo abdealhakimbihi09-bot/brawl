@@ -59,9 +59,13 @@ const Description: React.FC = () => {
                             <span className="text-gray-500">Size</span>
                             <span className="text-white font-medium text-right">902 MB</span>
                          </div>
-                          <div className="flex justify-between border-b border-white/5 pb-3">
-                            <span className="text-gray-500">Requires</span>
-                            <span className="text-white font-medium text-right">Android 5.0+</span>
+                          <div className="flex justify-between items-center border-b border-white/5 pb-3">
+                            <span className="text-gray-500">Platforms</span>
+                            <div className="flex gap-2">
+                                <span className="rounded-md bg-white/10 px-2 py-0.5 text-xs font-bold text-white border border-white/10">Android</span>
+                                <span className="rounded-md bg-white/10 px-2 py-0.5 text-xs font-bold text-white border border-white/10">iOS</span>
+                                <span className="rounded-md bg-white/10 px-2 py-0.5 text-xs font-bold text-white border border-white/10">PC</span>
+                            </div>
                          </div>
                           <div className="flex justify-between">
                             <span className="text-gray-500">Updated</span>
