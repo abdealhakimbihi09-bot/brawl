@@ -1,31 +1,35 @@
-import React, { useState, useEffect } from 'react';
-import BrawlStarsLogo from './icons/BrawlStarsLogo';
+
+import React from 'react';
 
 const Header: React.FC = () => {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/[.08] backdrop-blur-lg border-b border-white/10 shadow-lg' : 'bg-transparent'}`}>
-      <div className="container mx-auto max-w-6xl px-4 py-3 flex justify-between items-center">
-        <div className="flex items-center gap-3">
-          <BrawlStarsLogo className="h-8 w-8 text-yellow-300" />
-          <span className="text-white font-bold text-xl hidden sm:block">Brawl Gems</span>
+    <header className="sticky top-0 z-50 w-full border-b border-white/5 bg-[#0f1115]/80 backdrop-blur-md">
+      <div className="container mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
+        {/* Logo */}
+        <div className="flex items-center gap-2">
+            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-green-500 font-bold text-black">
+                L
+            </div>
+            <span className="text-xl font-bold tracking-tight text-white">
+                likomy<span className="text-green-500">.site</span>
+            </span>
         </div>
-        <nav className="flex items-center space-x-4 sm:space-x-8 text-sm sm:text-base">
-          <a href="#" className="text-gray-300 hover:text-white transition-colors duration-200">Home</a>
-          <a href="#" className="text-gray-300 hover:text-white transition-colors duration-200">Join Group</a>
-          <a href="#" className="text-gray-300 hover:text-white transition-colors duration-200">Rewards</a>
-          <a href="#" className="font-semibold text-white bg-white/10 px-3 py-1.5 rounded-md hover:bg-white/20 transition-colors duration-200">Support</a>
+
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-400">
+            <a href="#" className="text-white hover:text-green-400 transition-colors">Home</a>
+            <a href="#" className="hover:text-green-400 transition-colors">Games</a>
+            <a href="#" className="hover:text-green-400 transition-colors">Apps</a>
+            <a href="#" className="hover:text-green-400 transition-colors">Tutorials</a>
         </nav>
+
+        {/* Action Button */}
+        <a 
+            href="#" 
+            className="hidden sm:flex items-center gap-2 rounded-full border border-green-500/30 bg-green-500/10 px-4 py-1.5 text-xs font-bold text-green-400 transition-all hover:bg-green-500 hover:text-black"
+        >
+            DOWNLOAD ORIGINAL
+        </a>
       </div>
     </header>
   );
