@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Game, HeroSlide } from './types';
 
@@ -143,6 +142,54 @@ export const GAMES_DATA: Game[] = [
     size: '3.2 GB',
     rating: 4.8,
     devices: ['android', 'ios']
+  },
+  {
+    id: '17',
+    title: 'Avatar: From the Ashes',
+    imageUrl: 'https://i.postimg.cc/QMcT8r8w/avatar.jpg',
+    size: '3.5 GB',
+    rating: 4.7,
+    devices: ['android', 'ios']
+  },
+  {
+    id: '18',
+    title: 'Snow Runner',
+    imageUrl: 'https://i.postimg.cc/pTmNf7h5/snowrunner.jpg',
+    size: '1.8 GB',
+    rating: 4.5,
+    devices: ['android']
+  },
+  {
+    id: '19',
+    title: 'Etiket Pro',
+    imageUrl: 'https://i.postimg.cc/vH0H8k6r/etiket.jpg',
+    size: '45 MB',
+    rating: 4.2,
+    devices: ['android', 'ios']
+  },
+  {
+    id: '20',
+    title: 'The Crew Motorfest',
+    imageUrl: 'https://i.postimg.cc/9F7K7XvN/crew.jpg',
+    size: '2.2 GB',
+    rating: 4.6,
+    devices: ['android', 'ios']
+  },
+  {
+    id: '21',
+    title: 'Skate 4',
+    imageUrl: 'https://i.postimg.cc/0j4z4M6k/skate4.jpg',
+    size: '1.2 GB',
+    rating: 4.4,
+    devices: ['android', 'ios']
+  },
+  {
+    id: '22',
+    title: 'Left 4 Dead 2',
+    imageUrl: 'https://i.postimg.cc/3r8mXy7x/l4d2.jpg',
+    size: '2.1 GB',
+    rating: 4.8,
+    devices: ['android']
   }
 ];
 
