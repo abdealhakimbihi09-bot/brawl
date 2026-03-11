@@ -161,9 +161,9 @@ export const GAMES_DATA: Game[] = [
   },
   {
     id: '19',
-    title: 'Etiket Pro',
-    imageUrl: 'https://i.postimg.cc/vH0H8k6r/etiket.jpg',
-    size: '45 MB',
+    title: 'Poppy 5',
+    imageUrl: 'https://i.postimg.cc/ry14F5fg/images-(5).jpg',
+    size: '1.5 GB',
     rating: 4.2,
     devices: ['android', 'ios']
   },
