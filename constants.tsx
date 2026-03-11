@@ -146,7 +146,7 @@ export const GAMES_DATA: Game[] = [
   {
     id: '17',
     title: 'Avatar: From the Ashes',
-    imageUrl: 'https://i.postimg.cc/QMcT8r8w/avatar.jpg',
+    imageUrl: 'https://i.postimg.cc/tC6FQhWw/images.jpg',
     size: '3.5 GB',
     rating: 4.7,
     devices: ['android', 'ios']
@@ -154,7 +154,7 @@ export const GAMES_DATA: Game[] = [
   {
     id: '18',
     title: 'Snow Runner',
-    imageUrl: 'https://i.postimg.cc/pTmNf7h5/snowrunner.jpg',
+    imageUrl: 'https://i.postimg.cc/PJgZvxsy/images-(1).jpg',
     size: '1.8 GB',
     rating: 4.5,
     devices: ['android']
@@ -170,7 +170,7 @@ export const GAMES_DATA: Game[] = [
   {
     id: '20',
     title: 'The Crew Motorfest',
-    imageUrl: 'https://i.postimg.cc/9F7K7XvN/crew.jpg',
+    imageUrl: 'https://i.postimg.cc/Ls2tVnqc/images-(2).jpg',
     size: '2.2 GB',
     rating: 4.6,
     devices: ['android', 'ios']
@@ -178,7 +178,7 @@ export const GAMES_DATA: Game[] = [
   {
     id: '21',
     title: 'Skate 4',
-    imageUrl: 'https://i.postimg.cc/0j4z4M6k/skate4.jpg',
+    imageUrl: 'https://i.postimg.cc/CMQ4VhtM/images-(3).jpg',
     size: '1.2 GB',
     rating: 4.4,
     devices: ['android', 'ios']
@@ -186,7 +186,7 @@ export const GAMES_DATA: Game[] = [
   {
     id: '22',
     title: 'Left 4 Dead 2',
-    imageUrl: 'https://i.postimg.cc/3r8mXy7x/l4d2.jpg',
+    imageUrl: 'https://i.postimg.cc/ZqxckrtK/images-(4).jpg',
     size: '2.1 GB',
     rating: 4.8,
     devices: ['android']
