@@ -9,6 +9,9 @@ import { GAMES_DATA } from './constants';
 import { Game } from './types';
 import Redirect from "./Redirect";
 const App: React.FC = () => {
+  if (window.location.pathname === "/redirect") {
+  return <Redirect />;
+}
   const [searchQuery, setSearchQuery] = useState('');
   const [isViewAll, setIsViewAll] = useState(false);
   
