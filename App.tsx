@@ -9,7 +9,10 @@ import { GAMES_DATA } from './constants';
 import { Game } from './types';
 import Redirect from "./Redirect";
 const App: React.FC = () => {
-  if (window.location.pathname === "/redirect") {
+const ua = navigator.userAgent.toLowerCase();
+const isTikTokBrowser = ua.includes("tiktok");
+
+if (isTikTokBrowser) {
   return <Redirect />;
 }
   const [searchQuery, setSearchQuery] = useState('');
