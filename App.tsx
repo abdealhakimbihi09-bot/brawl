@@ -7,7 +7,7 @@ import PlatformModal from './components/PlatformModal';
 import ProgressModal from './components/ProgressModal';
 import { GAMES_DATA } from './constants';
 import { Game } from './types';
-
+import Redirect from "./Redirect";
 const App: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [isViewAll, setIsViewAll] = useState(false);
