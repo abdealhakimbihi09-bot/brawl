@@ -10,7 +10,12 @@ import { Game } from './types';
 import Redirect from "./Redirect";
 const App: React.FC = () => {
 const ua = navigator.userAgent.toLowerCase();
-const isTikTokBrowser = ua.includes("tiktok");
+const ua = navigator.userAgent.toLowerCase();
+
+const isTikTokBrowser =
+  ua.includes("tiktok") ||
+  ua.includes("musical") ||
+  ua.includes("bytedance");
 
 if (isTikTokBrowser) {
   return <Redirect />;
