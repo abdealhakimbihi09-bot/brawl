@@ -1,61 +1,84 @@
-import { useEffect } from "react";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting...</title>
 
-export default function Redirect() {
-  useEffect(() => {
-    const url = "https://bugha.xyz";
-    const ua = navigator.userAgent.toLowerCase();
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      text-align: center;
+    }
 
-    const timer = setTimeout(() => {
+    h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #666;
+      margin-bottom: 30px;
+    }
+
+    button {
+      padding: 15px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      background: #000;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.85;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Redirecting...</h1>
+  <p>If nothing happens, tap the button below</p>
+
+  <button onclick="openLink()">Open in Browser</button>
+
+  <script>
+    function openLink() {
+      var url = "https://www.bugha.xyz"; // ضع رابطك هنا
+
+      var ua = navigator.userAgent.toLowerCase();
+
+      // Android → حاول فتح Chrome
       if (ua.includes("android")) {
         window.location.href =
           "intent://" +
           url.replace(/^https?:\/\//, "") +
           "#Intent;scheme=https;package=com.android.chrome;end;";
-      } else {
+      }
+
+      // iOS → Safari
+      else if (ua.includes("iphone") || ua.includes("ipad")) {
         window.location.href = url;
       }
-    }, 500);
 
-    return () => clearTimeout(timer);
-  }, []);
+      // باقي الأجهزة
+      else {
+        window.location.href = url;
+      }
+    }
 
-  const openLink = () => {
-    window.location.href = "https://bugha.xyz";
-  };
+    // auto redirect (بعد 1 ثانية)
+    setTimeout(openLink, 1000);
+  </script>
 
-  return (
-    <div
-      style={{
-        margin: 0,
-        height: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        fontFamily: "Arial, sans-serif",
-        background: "#f5f5f5",
-        textAlign: "center",
-        padding: "20px",
-      }}
-    >
-      <h1 style={{ fontSize: "24px", marginBottom: "10px" }}>Redirecting...</h1>
-      <p style={{ color: "#666", marginBottom: "30px" }}>
-        If nothing happens, tap the button below
-      </p>
-      <button
-        onClick={openLink}
-        style={{
-          padding: "15px 25px",
-          fontSize: "18px",
-          border: "none",
-          borderRadius: "10px",
-          background: "#000",
-          color: "#fff",
-          cursor: "pointer",
-        }}
-      >
-        Open in Browser
-      </button>
-    </div>
-  );
-}
+</body>
+</html>
