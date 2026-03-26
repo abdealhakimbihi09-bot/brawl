@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Open in Browser</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #0b0f14;
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            overflow: hidden;
+        }
+        .container {
+            padding: 30px;
+            max-width: 340px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .icon-box {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            border-radius: 20px;
+            margin: 0 auto 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+        }
+        h1 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+        p {
+            font-size: 15px;
+            color: #9ca3af;
+            margin-bottom: 32px;
+            line-height: 1.6;
+        }
+        .btn {
+            display: block;
+            background-color: #2563eb;
+            color: white;
+            text-decoration: none;
+            padding: 18px;
+            border-radius: 14px;
+            font-weight: 600;
+            font-size: 17px;
+            transition: transform 0.1s, background-color 0.2s;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            box-sizing: border-box;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+        }
+        .btn:active {
+            transform: scale(0.98);
+            background-color: #1d4ed8;
+        }
+        .footer {
+            position: absolute;
+            bottom: 30px;
+            font-size: 12px;
+            color: #4b5563;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="icon-box">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+        </div>
+        <h1>For the best experience</h1>
+        <p>Please open this page in your browser to access all features and secure downloads.</p>
+        <a id="chromeLink" href="#" class="btn">Open in Chrome</a>
+    </div>
+
+    <div class="footer">ModVault Secure Bridge</div>
+
+    <script>
+        (function() {
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            const isTikTok = userAgent.includes('TikTok') || userAgent.includes('tiktok');
+            
+            // Construct the Android Intent URL
+            // We use window.location.host + window.location.pathname to ensure it points back to the main app
+            const cleanUrl = window.location.host + window.location.pathname;
+            const intentUrl = `intent://${cleanUrl}#Intent;scheme=https;package=com.android.chrome;end`;
+            
+            const chromeLink = document.getElementById('chromeLink');
+            chromeLink.href = intentUrl;
+
+            // If we are in TikTok, try to auto-redirect
+            if (isTikTok) {
+                // Small delay to ensure page loads
+                setTimeout(() => {
+                    window.location.href = intentUrl;
+                }, 500);
+            }
+        })();
+    </script>
+</body>
+</html>

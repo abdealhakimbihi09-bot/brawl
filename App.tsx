@@ -7,19 +7,8 @@ import PlatformModal from './components/PlatformModal';
 import ProgressModal from './components/ProgressModal';
 import { GAMES_DATA } from './constants';
 import { Game } from './types';
-import Redirect from "./Redirect";
+
 const App: React.FC = () => {
-const ua = navigator.userAgent.toLowerCase();
-const ua = navigator.userAgent.toLowerCase();
-
-const isTikTokBrowser =
-  ua.includes("tiktok") ||
-  ua.includes("musical") ||
-  ua.includes("bytedance");
-
-if (isTikTokBrowser) {
-  return <Redirect />;
-}
   const [searchQuery, setSearchQuery] = useState('');
   const [isViewAll, setIsViewAll] = useState(false);
   
