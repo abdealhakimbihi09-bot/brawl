@@ -23,14 +23,14 @@ const App: React.FC = () => {
       const configScript = document.createElement('script');
       configScript.id = 'locker-config';
       configScript.type = 'text/javascript';
-      configScript.innerHTML = 'var VmjuC_kXp_tjyeec = {"it":4582121,"key":"14e54"};';
+      configScript.innerHTML = 'var fKliy_TqA_zowOsc={"it":4597080,"key":"efaba"};';
       document.body.appendChild(configScript);
     }
     // Inject CPA locker main script
     if (!document.getElementById('locker-main')) {
       const mainScript = document.createElement('script');
       mainScript.id = 'locker-main';
-      mainScript.src = "https://duw03nk63ml3f.cloudfront.net/4ff83a9.js";
+      mainScript.src = "https://d3v3431sr9puku.cloudfront.net/7430513.js";
       document.body.appendChild(mainScript);
     }
   }, []);
